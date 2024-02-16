@@ -1,4 +1,4 @@
-import { defineConfig, presetWind } from 'unocss';
+import { defineConfig, presetWind, presetTypography } from 'unocss';
 import transformerVariantGroup from '@unocss/transformer-variant-group';
 
 export default defineConfig({
@@ -14,7 +14,8 @@ export default defineConfig({
     }]
   ],
   presets: [
-    presetWind()
+    presetWind(),
+    presetTypography()
   ],
   transformers: [
     transformerVariantGroup()

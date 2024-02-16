@@ -1,6 +1,18 @@
 ---
 import "@unocss/reset/tailwind.css";
+import "../styles/Markdown.css";
 import Nav from "../components/Nav.astro";
+
+import { getEntry } from "astro:content";
+import { markdown } from "@astropub/md";
+
+const order = ["who_are_you"];
+
+const segmentPromises = order.map((name) => {
+  return getEntry("gamedev", name);
+});
+
+const segments = await Promise.all(segmentPromises);
 ---
 
 <html lang="en">
@@ -13,6 +25,19 @@ import Nav from "../components/Nav.astro";
   </head>
   <body class="bg-neutral-950 text-white h-[150vh]">
     <Nav />
-    <main></main>
+    <main>
+      <div></div>
+      <div class="flex flex-col w-4/5 md:w-3/5 mx-auto">
+        {
+          segments.map((currentSegment) => {
+            return (
+              <div class="prose w-4/5 mx-auto">
+                {markdown(currentSegment?.body ?? "")}
+              </div>
+            );
+          })
+        }
+      </div>
+    </main>
   </body>
 </html>
