@@ -5,9 +5,8 @@ import Nav from "../components/Nav.astro";
 import MarkdownCard from "../components/MarkdownCard.astro";
 
 import { getEntry } from "astro:content";
-import { markdown } from "@astropub/md";
 
-const order = ["who_are_you", "what_skills"];
+const order = ["who_are_you", "what_skills", "what_kind", "build_team"];
 
 const segmentPromises = order.map((name) => {
   return getEntry("gamedev", name);
