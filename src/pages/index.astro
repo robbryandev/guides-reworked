@@ -2,11 +2,12 @@
 import "@unocss/reset/tailwind.css";
 import "../styles/Markdown.css";
 import Nav from "../components/Nav.astro";
+import MarkdownCard from "../components/MarkdownCard.astro";
 
 import { getEntry } from "astro:content";
 import { markdown } from "@astropub/md";
 
-const order = ["who_are_you"];
+const order = ["who_are_you", "what_skills"];
 
 const segmentPromises = order.map((name) => {
   return getEntry("gamedev", name);
@@ -23,17 +24,19 @@ const segments = await Promise.all(segmentPromises);
     <meta name="generator" content={Astro.generator} />
     <title>Game Development</title>
   </head>
-  <body class="bg-neutral-950 text-white h-[150vh]">
+  <body class="bg-black text-white pb-10">
     <Nav />
     <main>
       <div></div>
-      <div class="flex flex-col w-4/5 md:w-3/5 mx-auto">
+      <div class="flex flex-col md:w-3/5 gap-4 md:gap-6 mx-auto">
         {
           segments.map((currentSegment) => {
             return (
-              <div class="prose w-4/5 mx-auto">
-                {markdown(currentSegment?.body ?? "")}
-              </div>
+              <MarkdownCard
+                img="gamedev/controller.png"
+                alt="gamedev controller header"
+                content={currentSegment?.body ?? ""}
+              />
             );
           })
         }

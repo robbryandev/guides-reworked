@@ -12,9 +12,33 @@
   display: block;
   margin: auto;
   padding: 2px;
-  border-bottom: 1px solid white;
+  width: 75%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.prose > p {
+  padding: 1rem;
+  font-size: 1.1rem;
+}
+
+.prose > p > img {
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .prose > p > img {
+    width: 30rem;
+  }
 }
 
 .prose > p > a {
   color: gold;
+}
+
+.prose > p > a:hover {
+  color: purple;
 }
