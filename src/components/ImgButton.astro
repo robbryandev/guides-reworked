@@ -1,0 +1,64 @@
+---
+export interface Props {
+  img: "game" | "stream" | "jam";
+  size: "small" | "normal";
+}
+
+const props = Astro.props;
+
+type ButtonLink = {
+  img: string;
+  alt: string;
+  href: string;
+};
+
+function getImage(img: typeof props.img): ButtonLink {
+  switch (img) {
+    case "game":
+      return {
+        img: "button_gamedev.png",
+        alt: "gamedev guide",
+        href: "/",
+      };
+    case "stream":
+      return {
+        img: "button_streaming.png",
+        alt: "streaming guide",
+        href: "/streaming",
+      };
+    case "jam":
+      return {
+        img: "button_gamejam.png",
+        alt: "gamejam guide",
+        href: "/gamejam",
+      };
+  }
+}
+
+const btnData: ButtonLink = getImage(props.img);
+const size = props.size === "normal" ? "w-52 h-18" : "w-36 h-12";
+
+function redirect(data: ButtonLink): string {
+  return `(() => {
+    window.location.href = '${data.href}';
+  })()`;
+}
+---
+
+<button
+  class={`rotate bg-contain bg-repeat-none bg-center ${size} before:(bg-yellow-400/75)`}
+  onclick={redirect(btnData)}
+>
+  <img class="rotate" src={btnData.img} alt={btnData.alt} />
+  <img
+    class="arrow-bounce rotate relative bottom-3 left-28 w-[10%] md:(bottom-5 left-40 w-auto)"
+    src="button_arrow.png"
+    alt="gamedev_arrow"
+  />
+</button>
+
+<style>
+  .rotate:hover {
+    filter: sepia(1) hue-rotate(30deg) saturate(300%) brightness(85%);
+  }
+</style>
