@@ -10,10 +10,27 @@ export interface Props {
 }
 
 const props = Astro.props;
+
+function capitalize(val: string) {
+  if (!val.length || val.length === 1) {
+    return val.toUpperCase();
+  }
+
+  const res: string[] = [];
+  val.split("_").forEach((word) => {
+    const chars = word.split("");
+    const first = chars.shift();
+    res.push(first?.toUpperCase() + chars.join(""));
+  });
+
+  return res.join(" ");
+}
 ---
 
-<div class="hidden md:block sticky top-2 h-full min-h-screen text-neutral-200">
-  <ul class="absolute top-2 py-8 w-52 bg-black pl-18">
+<div
+  class="hidden md:block sticky top-2 h-full w-auto min-h-screen text-neutral-200"
+>
+  <ul class="absolute top-2 py-8 bg-black pl-18">
     <li class="hover:text-neutral-400">
       <a href={`#site-nav`}>Site Navigation</a>
     </li>
@@ -28,11 +45,7 @@ const props = Astro.props;
               {data.sub.map((subEntry) => {
                 return (
                   <li class="hover:text-neutral-400">
-                    <a href={`#${subEntry}`}>
-                      {subEntry.split("_").map((cap) => {
-                        return <span class="capitalize">{cap} </span>;
-                      })}
-                    </a>
+                    <a href={`#${subEntry}`}>{capitalize(subEntry)}</a>
                   </li>
                 );
               })}
@@ -47,3 +60,9 @@ const props = Astro.props;
     }
   </ul>
 </div>
+
+<style>
+  ul {
+    white-space: nowrap;
+  }
+</style>
