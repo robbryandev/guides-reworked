@@ -40,39 +40,37 @@ function capitalize(val: string) {
 }
 ---
 
-<div
-  class="hidden md:block sticky top-2 h-full w-auto min-h-screen text-neutral-200"
+<ul
+  class="absolute overflow-y-scroll md:overflow-y-auto top-26 md:top-2 py-8 pl-18 bg-black md:bg-transparent w-full md:w-auto"
 >
-  <ul class="absolute top-2 py-8 bg-black pl-18">
-    <li class="hover:text-neutral-400">
-      <a href={`#site-nav`}>Site Navigation</a>
-    </li>
-    {
-      props.data.map((data) => {
-        return data.sub.length > 0 ? (
-          <>
-            <li class="hover:text-neutral-400">
-              <a href={`#${data.id}`}>{data.name}</a>
-            </li>
-            <ul class="pl-4">
-              {data.sub.map((subEntry) => {
-                return (
-                  <li class="hover:text-neutral-400">
-                    <a href={`#${subEntry}`}>{capitalize(subEntry)}</a>
-                  </li>
-                );
-              })}
-            </ul>
-          </>
-        ) : (
+  <li class="hover:text-neutral-400">
+    <a href={`#site-nav`}>Site Navigation</a>
+  </li>
+  {
+    props.data.map((data) => {
+      return data.sub.length > 0 ? (
+        <>
           <li class="hover:text-neutral-400">
             <a href={`#${data.id}`}>{data.name}</a>
           </li>
-        );
-      })
-    }
-  </ul>
-</div>
+          <ul class="pl-4">
+            {data.sub.map((subEntry) => {
+              return (
+                <li class="hover:text-neutral-400">
+                  <a href={`#${subEntry}`}>{capitalize(subEntry)}</a>
+                </li>
+              );
+            })}
+          </ul>
+        </>
+      ) : (
+        <li class="hover:text-neutral-400">
+          <a href={`#${data.id}`}>{data.name}</a>
+        </li>
+      );
+    })
+  }
+</ul>
 
 <style>
   ul {

@@ -27,12 +27,12 @@
   margin-right: auto;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  max-height: 15rem;
 }
 
 @media (min-width: 768px) {
   .prose img {
     max-width: 30rem;
-    max-height: 15rem;
   }
 }
 

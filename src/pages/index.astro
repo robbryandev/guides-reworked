@@ -50,10 +50,14 @@ const treeVals: SegmentTreeValue[] = segments.map((val) => {
     <title>Game Development</title>
   </head>
   <body class="bg-black text-white pb-10">
-    <Nav />
+    <Nav data={treeVals} />
     <main>
       <div class="flex">
-        <Tree data={treeVals} />
+        <div
+          class="hidden md:block sticky top-2 h-full w-auto min-h-screen text-neutral-200"
+        >
+          <Tree data={treeVals} />
+        </div>
         <div class="flex flex-col md:w-3/5 gap-4 md:gap-6 mx-auto">
           {
             segments.map((currentSegment) => {
