@@ -1,3 +1,7 @@
+---
+name: "Picking a Genre"
+---
+
 # What kind of game should I make?
 ---
 

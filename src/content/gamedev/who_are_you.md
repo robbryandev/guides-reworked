@@ -1,3 +1,7 @@
+---
+name: "Who Are You?"
+---
+
 # Who Are You?
 ---
 My name is Jason Thor Hall but I just go by my middle name of Thor. I started in the games industry in 2004 on World of Warcraft Vanilla. I've worked for Blizzard Entertainment, Amazon Games Studios, the United States Department of Energy, and now Pirate Software. I've got three black badges from DEFCON, two for cryptography, and one for telephreaking. I'm a programmer, hacker, game developer, and all around giant nerd.

@@ -1,6 +1,35 @@
 ---
 import "@unocss/reset/tailwind.css";
+import "../styles/Markdown.css";
 import Nav from "../components/Nav.astro";
+import Tree, { type SegmentTreeValue } from "../components/Tree.astro";
+import MarkdownCard from "../components/MarkdownCard.astro";
+
+import { getEntry } from "astro:content";
+
+const order = [];
+
+const segmentPromises = order.map((name) => {
+  return getEntry("streaming", name);
+});
+
+const segments = await Promise.all(segmentPromises);
+
+const treeVals: SegmentTreeValue[] = segments.map((val) => {
+  const id: string = val!.slug;
+  const name: string = val!.data.name;
+  let sections: string[] = [];
+
+  if (val!.data.sections?.length) {
+    sections = val!.data.sections;
+  }
+
+  return {
+    id: id,
+    name: name,
+    sub: sections,
+  };
+});
 ---
 
 <html lang="en">
@@ -11,8 +40,26 @@ import Nav from "../components/Nav.astro";
     <meta name="generator" content={Astro.generator} />
     <title>Game Development</title>
   </head>
-  <body class="bg-neutral-950 text-white h-[150vh]">
+  <body class="bg-black text-white pb-10">
     <Nav />
-    <main></main>
+    <main>
+      <div class="flex">
+        <Tree data={treeVals} />
+        <div class="flex flex-col md:w-3/5 gap-4 md:gap-6 mx-auto">
+          {
+            segments.map((currentSegment) => {
+              return (
+                <MarkdownCard
+                  id={currentSegment!.slug}
+                  img="controller.png"
+                  alt="controller segment header"
+                  content={currentSegment!.body}
+                />
+              );
+            })
+          }
+        </div>
+      </div>
+    </main>
   </body>
 </html>

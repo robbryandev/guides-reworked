@@ -2,6 +2,7 @@
 import "@unocss/reset/tailwind.css";
 import "../styles/Markdown.css";
 import Nav from "../components/Nav.astro";
+import Tree, { type SegmentTreeValue } from "../components/Tree.astro";
 import MarkdownCard from "../components/MarkdownCard.astro";
 
 import { getEntry } from "astro:content";
@@ -13,6 +14,22 @@ const segmentPromises = order.map((name) => {
 });
 
 const segments = await Promise.all(segmentPromises);
+
+const treeVals: SegmentTreeValue[] = segments.map((val) => {
+  const id: string = val!.slug;
+  const name: string = val!.data.name;
+  let sections: string[] = [];
+
+  if (val!.data.sections?.length) {
+    sections = val!.data.sections;
+  }
+
+  return {
+    id: id,
+    name: name,
+    sub: sections,
+  };
+});
 ---
 
 <html lang="en">
@@ -26,19 +43,22 @@ const segments = await Promise.all(segmentPromises);
   <body class="bg-black text-white pb-10">
     <Nav />
     <main>
-      <div></div>
-      <div class="flex flex-col md:w-3/5 gap-4 md:gap-6 mx-auto">
-        {
-          segments.map((currentSegment) => {
-            return (
-              <MarkdownCard
-                img="gamedev/controller.png"
-                alt="gamedev controller header"
-                content={currentSegment?.body ?? ""}
-              />
-            );
-          })
-        }
+      <div class="flex">
+        <Tree data={treeVals} />
+        <div class="flex flex-col md:w-3/5 gap-4 md:gap-6 mx-auto">
+          {
+            segments.map((currentSegment) => {
+              return (
+                <MarkdownCard
+                  id={currentSegment!.slug}
+                  img="controller.png"
+                  alt="controller segment header"
+                  content={currentSegment!.body}
+                />
+              );
+            })
+          }
+        </div>
       </div>
     </main>
   </body>

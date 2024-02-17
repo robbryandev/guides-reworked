@@ -2,6 +2,7 @@
 import { markdown } from "@astropub/md";
 
 export interface Props {
+  id: string;
   content: string;
   img: string;
   alt: string;
@@ -12,6 +13,7 @@ const props = Astro.props;
 
 <div
   class="prose w-4/5 mx-auto p-4 md:p-6 border border-(neutral-400 2) rounded-xl"
+  id={props.id}
 >
   <img class="w-md md:w-lg mx-auto" src={props.img} alt={props.alt} />
   {markdown(props.content)}

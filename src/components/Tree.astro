@@ -1,0 +1,47 @@
+---
+export type SegmentTreeValue = {
+  id: string;
+  name: string;
+  sub: string[];
+};
+
+export interface Props {
+  data: SegmentTreeValue[];
+}
+
+const props = Astro.props;
+---
+
+<div class="sticky top-2 h-full min-h-screen text-neutral-200">
+  <ul class="absolute top-2 py-8 w-52 bg-black pl-18">
+    <li class="hover:text-neutral-400">
+      <a href={`#site-nav`}>Site Navigation</a>
+    </li>
+    {
+      props.data.map((data) => {
+        return data.sub.length > 0 ? (
+          <>
+            <li class="hover:text-neutral-400">
+              <a href={`#${data.id}`}>{data.name}</a>
+            </li>
+            <ul class="pl-4">
+              {data.sub.map((subEntry) => {
+                return (
+                  <li class="hover:text-neutral-400">
+                    <a class="capitalize" href={`#${subEntry}`}>
+                      {subEntry}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </>
+        ) : (
+          <li class="hover:text-neutral-400">
+            <a href={`#${data.id}`}>{data.name}</a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</div>

@@ -1,3 +1,7 @@
+---
+name: "Building a Team"
+---
+
 # How do I build a team?
 ---
 
