@@ -12,7 +12,7 @@ export interface Props {
 const props = Astro.props;
 ---
 
-<div class="sticky top-2 h-full min-h-screen text-neutral-200">
+<div class="hidden md:block sticky top-2 h-full min-h-screen text-neutral-200">
   <ul class="absolute top-2 py-8 w-52 bg-black pl-18">
     <li class="hover:text-neutral-400">
       <a href={`#site-nav`}>Site Navigation</a>
@@ -28,8 +28,10 @@ const props = Astro.props;
               {data.sub.map((subEntry) => {
                 return (
                   <li class="hover:text-neutral-400">
-                    <a class="capitalize" href={`#${subEntry}`}>
-                      {subEntry}
+                    <a href={`#${subEntry}`}>
+                      {subEntry.split("_").map((cap) => {
+                        return <span class="capitalize">{cap} </span>;
+                      })}
                     </a>
                   </li>
                 );
