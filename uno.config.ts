@@ -8,9 +8,6 @@ export default defineConfig({
     }],
     ["bg-repeat-none", {
       "background-repeat": "no-repeat"
-    }],
-    ["bg-img-game", {
-      "background-image": "url('button_gamedev_transparent.png')"
     }]
   ],
   presets: [
