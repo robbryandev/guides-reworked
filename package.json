@@ -11,9 +11,15 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.5.4",
+    "@astrojs/react": "^3.0.10",
     "@astropub/md": "^0.4.0",
+    "@types/react": "^18.2.56",
+    "@types/react-dom": "^18.2.19",
     "@unocss/reset": "^0.58.5",
     "astro": "^4.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-twitch-embed": "^3.0.2",
     "typescript": "^5.3.3"
   },
   "devDependencies": {
