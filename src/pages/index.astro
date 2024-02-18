@@ -46,6 +46,10 @@ const treeVals: SegmentTreeValue[] = segments.map((val) => {
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="Guides for anyone to start making games."
+    />
     <meta name="generator" content={Astro.generator} />
     <title>Game Development</title>
   </head>
@@ -64,7 +68,7 @@ const treeVals: SegmentTreeValue[] = segments.map((val) => {
               return (
                 <MarkdownCard
                   id={currentSegment!.slug}
-                  img="controller.png"
+                  img="/images/controller.png"
                   alt="controller segment header"
                   content={currentSegment!.body}
                 />

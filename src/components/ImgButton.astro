@@ -16,19 +16,19 @@ function getImage(img: typeof props.img): ButtonLink {
   switch (img) {
     case "game":
       return {
-        img: "button_gamedev.png",
+        img: "/images/button_gamedev.png",
         alt: "gamedev guide",
         href: "/",
       };
     case "stream":
       return {
-        img: "button_streaming.png",
+        img: "/images/button_streaming.png",
         alt: "streaming guide",
         href: "/streaming",
       };
     case "jam":
       return {
-        img: "button_gamejam.png",
+        img: "/images/button_gamejam.png",
         alt: "gamejams",
         href: "https://itch.io/jam/pirate",
       };
@@ -52,7 +52,7 @@ function redirect(data: ButtonLink): string {
   <img class="rotate" src={btnData.img} alt={btnData.alt} />
   <img
     class="arrow-bounce rotate relative bottom-3 left-28 w-[10%] md:(bottom-5 left-40 w-auto)"
-    src="button_arrow.png"
+    src="/images/button_arrow.png"
     alt="gamedev_arrow"
   />
 </button>

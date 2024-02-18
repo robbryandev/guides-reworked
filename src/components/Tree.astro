@@ -53,15 +53,13 @@ function capitalize(val: string) {
           <li class="hover:text-neutral-400">
             <a href={`#${data.id}`}>{data.name}</a>
           </li>
-          <ul class="pl-4">
-            {data.sub.map((subEntry) => {
-              return (
-                <li class="hover:text-neutral-400">
-                  <a href={`#${subEntry}`}>{capitalize(subEntry)}</a>
-                </li>
-              );
-            })}
-          </ul>
+          {data.sub.map((subEntry) => {
+            return (
+              <li class="hover:text-neutral-400 pl-4">
+                <a href={`#${subEntry}`}>{capitalize(subEntry)}</a>
+              </li>
+            );
+          })}
         </>
       ) : (
         <li class="hover:text-neutral-400">

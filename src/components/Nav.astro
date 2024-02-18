@@ -19,19 +19,19 @@ const props = Astro.props;
           class="flex flex-row justify-center w-full gap-4 px-4 -ml-4 bg-black"
         >
           <ImgButton img="game" size="small" />
-          <ImgButton img="stream" size="small" />
+          <!-- <ImgButton img="stream" size="small" /> -->
           <ImgButton img="jam" size="small" />
         </div>
         <Tree data={props.data} />
       </div>
       <summary class="py-4 arrow-bounce">
-        <img src="button_arrow.png" alt="mobile-menu" />
+        <img src="/images/button_arrow.png" alt="mobile-menu" />
       </summary>
     </details>
   </div>
   <div class="hidden md:(flex flex-row justify-center w-full gap-12 px-4)">
     <ImgButton img="game" size="normal" />
-    <ImgButton img="stream" size="normal" />
+    <!-- <ImgButton img="stream" size="normal" /> -->
     <ImgButton img="jam" size="normal" />
   </div>
 </nav>

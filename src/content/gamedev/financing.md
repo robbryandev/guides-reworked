@@ -21,7 +21,7 @@ All that being said here are a few methods we used and still use to raise money 
 ## Streaming
 
 ---
-![Twitch](gamedev/twitch_splash.jpg)
+![Twitch](/images/gamedev/twitch_splash.jpg)
 
 [Twitch](https://piratesoftware.live/) has been the cornerstone of our studios income throughout everything we've done. It serves as a great way to interact with the community, a source of revenue, and a real time interactive advertisement for the work we do. We literally would not exist without Twitch.
 
@@ -35,7 +35,7 @@ After a [long campaign](https://twitch.uservoice.com/forums/310210-discover-brow
 ## Publishers
 
 ---
-![Publishers](gamedev/publisher_splash.jpg)
+![Publishers](/images/gamedev/publisher_splash.jpg)
 
 Any time you are thinking about going with a publisher just keep one question in mind. Will their help lead to profits above and beyond the revenue cut they take? If you don't know the answer or if the answer is no then you don't need a publisher. If you can release your game without a publisher then you absolutely should.
 
@@ -49,7 +49,7 @@ On average, most publishers ask for 30-70% of the income of your game. This cost
 ## Kickstarter
 
 ---
-![Kickstarter](gamedev/kick_splash.jpg)
+![Kickstarter](/images/gamedev/kick_splash.jpg)
 
 [Kickstarter](https://www.kickstarter.com/projects/piratesoftware/heartbound) is a great place to raise funding when you've already got a community base and a workable demo. I definitely wouldn't advise going this route before you have those things ready. I also wouldn't rely on Kickstarter as something that will fund the entire development of your game. We used it as a marketing platform and to get initial funding for hardware, software, and audio samples. Wait to launch your Kickstarter until you know you will succeed. Don't leave it up to chance.
 
@@ -61,7 +61,7 @@ On average, most publishers ask for 30-70% of the income of your game. This cost
 ## Merchandise
 
 ---
-![Merchandise](gamedev/merch_splash.jpg)
+![Merchandise](/images/gamedev/merch_splash.jpg)
 
 [Merchandise](https://piratesoftware.bigcartel.com/products) has been a lot of fun to create and distribute around the world. With changing shipping rates and material costs things have been pretty rough but we always find a way to adapt to the new meta.
 
@@ -75,7 +75,7 @@ We use [Pirate Ship](https://www.pirateship.com/) for shipping because they let 
 ## Subscription Services
 
 ---
-![Subscription Services](gamedev/kofi_splash.png)
+![Subscription Services](/images/gamedev/kofi_splash.png)
 
 [Ko-Fi](https://ko-fi.com/piratesoftware/tiers) is like Patreon if Patreon wasn't the actual devil. Unlike the actual devil, Ko-Fi charges a flat fee for their subscription service. Right now it's 54$ a year. That's 4.50$ per month. No hidden percentages or other garbage. Literally all the functionality that Patreon offers but without the 8% helltax tacked on.
 
@@ -89,7 +89,7 @@ When people join in on Tiers they also pay immediately so no more offset payment
 ## Scams
 
 ---
-![Scams](gamedev/scam_splash.png)
+![Scams](/images/gamedev/scam_splash.png)
 
 Scams are a super prevalent pitfall in the world of the indie dev. Do not sign anything you haven't read. If you're unsure of what something means in a contract then talk to a lawyer. If you do accidentally give out keys for your game you can burn them through the Steam Partner tools so don't worry. Outside of that here are a few examples of some scams we've encountered and avoided.
 

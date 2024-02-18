@@ -7,7 +7,7 @@ import MarkdownCard from "../components/MarkdownCard.astro";
 
 import { getEntry } from "astro:content";
 
-const order = [];
+const order: string[] = [];
 
 const segmentPromises = order.map((name) => {
   return getEntry("streaming", name);
@@ -37,11 +37,15 @@ const treeVals: SegmentTreeValue[] = segments.map((val) => {
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="Guides for anyone to start making games."
+    />
     <meta name="generator" content={Astro.generator} />
     <title>Game Development</title>
   </head>
   <body class="bg-black text-white pb-10">
-    <Nav />
+    <Nav data={treeVals} />
     <main>
       <div class="flex">
         <Tree data={treeVals} />
